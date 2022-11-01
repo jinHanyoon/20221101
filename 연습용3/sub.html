@@ -13,6 +13,14 @@
             let current= 0; 
             $('.nav_menuM').hide()
 
+            $('.log').hide()
+            $('.logBT').click(function(e){
+                $('.log').fadeToggle(500)
+            })
+            $('.log').mouseleave(function(){
+                $('.log').fadeOut(500)
+            })
+
             $('.M_login').click(function(){
                     $('.nav_menuM').slideToggle(500)
                 })
@@ -66,7 +74,7 @@
 </head>
 <body>
 
-    <div ids="wrap">
+    <div id="wrap">
         <header>
             <div class="header_in">
                 <h1 class="logo"><a href="/index.html">logo</a></h1>
@@ -85,7 +93,7 @@
                         
                     </div>
                     <div class="login_bottom">
-                        <a href="#">로그인</a>
+                        <a href="#" class="logBT">로그인</a>
                         <a href="#">회원가입</a>
                     </div>
                     <div class="M_login">
@@ -128,7 +136,7 @@
                         <div class="sub01_box">
                             <p>상품이름: 끝장나는상품</p>
                             <a href="#"><span>★★★★★</span>/리뷰보러가기</a>
-                            <p>정상가: 99999999원</p>
+                            <p>정상가: 0,000,00원</p>
 
                         
                         </div>
@@ -138,7 +146,7 @@
                             <p>추가혜택가:</p>
                         </div>
                         <div class="sub01_rightinfo">
-                            <p>77777777원<span class="infot2">신규 가입시 10% 쿠폰 즉시 지급</span></p>
+                            <p>0,000,00원<span class="infot2">신규 가입시 10% 쿠폰 즉시 지급</span></p>
                             <a href="#">할인카드 확인하기</a>
                         </div>
                         </div>
@@ -177,9 +185,21 @@
                     <div id="UserBox">
                      
                     </div>
-           
-            </div>
         </section>
+        <div class="log">
+            <div class="log_text">
+               <h1>Login</h1>
+               <div class="input_con">
+               <input type="text" placeholder="ID:윤진한" id="login">
+               <input type="password" id="password" placeholder="password:1234">
+               <button id="log_go">로그인</button>
+            </div>
+           </div>
+       </div>
+
+
+    </div>
+    
         <script src="./js/main2.js"></script>
     
 </body>

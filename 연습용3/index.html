@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style2.css">
     <script src="./js/main.js"></script>
-    <script src="./js/java.js"></script>
+
     <script>
         $(document).ready(function(){
             let current =0
+
+            $('.log').hide()
+            $('.logBT').click(function(e){
+                $('.log').fadeToggle(500)
+            })
+            $('.log').mouseleave(function(){
+                $('.log').fadeOut(500)
+            })
+
             $('.nav_menuM').hide()
             $('.page02_button li').eq(0).addClass('on')
 
@@ -125,7 +134,7 @@
                         <a href="#">이벤트</a>
                     </div>
                     <div class="login_bottom">
-                        <a href="#">로그인</a>
+                        <a href="#" class="logBT">로그인</a>
                         <a href="#">회원가입</a>
                     </div>
 
@@ -269,9 +278,20 @@
             </div>
 
         </section>
+        <div class="log">
+            <div class="log_text">
+               <h1>Login</h1>
+               <div class="input_con">
+                <input type="text" placeholder="ID:윤진한" id="login">
+                <input type="password" id="password" placeholder="password:1234">
+               <button id="log_go">로그인</button>
+            </div>
+           </div>
+       </div>
 
 
     </div>
+    <script src="./js/mainP.js"></script>
     
 </body>
 </html>
