@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style2.css">
+    <script src="./js/main.js"></script>
+    <script src="./js/java.js"></script>
+    <script>
+        $(document).ready(function(){
+            let current =0
+            $('.nav_menuM').hide()
+            $('.page02_button li').eq(0).addClass('on')
+
+            $('.page01_centerList li').hover(function(){
+                $(this).addClass('on')
+            },function(){
+            }
+            )
+            $('.page01_centerList').mouseleave(function(){
+                $('.page01_centerList li').removeClass('on')
+            })
+            $('.page02_button li').click(function(){
+                var page02=$(this).index();
+                posX = page02*(-600)+'px'
+                $('.page02_img').animate({left:posX})
+                $('.page02_button li').removeClass('on')
+            $('.page02_button li').eq(page02).addClass('on')
+
+            })
+
+            $('nav li').click(function(e){
+                    e.preventDefault()
+                    var q=$(this).index()
+                    console.log(q)
+
+                    let section = $('section').eq(q)
+                    let tt=section.offset().top
+                    $('html, body').stop().animate({scrollTop:tt},800)
+                    
+                })
+                $(window).scroll(function(){
+                    var sct=$(window).scrollTop();
+
+                    $('section').each(function(){
+                        var tg=$(this);
+                        var q=tg.index();
+                        console.log(q)
+                        if(tg.offset().top <=sct){
+
+
+                        }
+                    })
+                })
+
+                $('.page03_img li').hover(function(){
+                    var page03 =$(this).index()
+                    $('.page03_img li').eq(page03).addClass('on')
+                    $('.page03_text').eq(page03).addClass('on')
+                },function(){
+                    $(this).removeClass('on')
+                    $('.page03_text').removeClass('on')
+                })
+                $('.M_login').click(function(){
+                    $('.nav_menuM').slideToggle(500)
+                })
+                $('.nav_menuM li').hover(function(){
+                    var m=$(this).index()
+                    $(this).addClass('on')
+                    $('.nav_menuM li a').eq(m).addClass('on')
+                },function(){
+                    $(this).removeClass('on')
+                    $('.nav_menuM li a').removeClass('on')
+
+                    
+
+                }
+                
+                )
+
+                
+            $('.page02_button li').click(function(){
+                var i= $(this).index()
+                console.log(i)
+                move(i)
+
+                function move(i){
+                if(current == i)return;//같은 버튼을 클릭했을때 실행되지 않게 함 
+                let currentE1 = $('.page1023 li').eq(current);//슬라이드에서 현재보이는 이미지 li
+                let nextE1 = $('.page1023 li').eq(i); //슬라이드에서 다음에 보이는 이미지 li
+
+
+                currentE1.css({opacity:1}).stop().animate({opacity:0})
+                nextE1.css({opacity:0}).stop().animate({opacity:1})
+                current =i
+            
+        }
+            })
+
+        
+            })
+        
+    </script>
+    
+</head>
+<body>
+    <div ids="wrap">
+        <header>
+            <div class="header_in">
+                <h1 class="logo">logo</h1>
+                <nav>
+                    <ul class="nav_menu">
+                        <li><a href="#">메뉴1</a></li>
+                        <li><a href="#">메뉴2</a></li>
+                        <li><a href="#">메뉴3</a></li>
+                    
+                    </ul>
+                </nav>
+
+                <div class="login">
+                    <div class="login_top">
+                        <a href="#">고객센터</a>
+                        <a href="#">이벤트</a>
+                    </div>
+                    <div class="login_bottom">
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입</a>
+                    </div>
+
+                        <div class="M_login">
+                            <img src="">
+                        </div>
+                </div>
+            </div>
+        </header>
+        <div class="nav_menuM">
+            <ul class="menuM">
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+           
+            </ul>
+        </div>
+
+        <section>
+            <div class="page01">
+                <div class="page01_left">
+                    What Your
+                </div>
+                <div class="page01_center">
+                    <ul class="page01_centerList">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+
+                    </ul>
+
+                </div>
+                <div class="page01_right">
+                    Name?
+                </div>
+                
+            </div>
+            
+        </section>
+        <section>
+            <div class="page02">
+                <div class="page02_left">
+                    <ul class="page02_button">
+                        <li>
+                            <div class="page02_icon1"></div>
+                            <div class="left_text">
+                                <p>기타 이미지에 관한 글</p>
+                                <p>기타 이미지에 관한 부가설명</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="page02_icon2"></div>
+                            <div class="left_text">
+                                <p>기타 이미지에 관한 글</p>
+                                <p>기타 이미지에 관한 부가설명</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="page02_icon3"></div>
+                            <div class="left_text">
+                                <p>기타 이미지에 관한 글</p>
+                                <p>기타 이미지에 관한 부가설명</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="page02_icon4"></div>
+                            <div class="left_text">
+                                <p>기타 이미지에 관한 글</p>
+                                <p>기타 이미지에 관한 부가설명</p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="page02_right">
+                    <div class="page02_view">
+                        <ul class="page02_img">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+
+                    <div class="page02_view1023">
+                        <ul class="page1023">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="page03">
+        
+                <div class="page03_img">
+                
+                    <ul>
+                        <li>
+                            <div class="page03_text">
+                                <h1>상품이름</h1>
+                                <p>부가설명</p>
+                                <p>끝장나는상품</p>
+                                <a href="/sub.html">Click-></a>
+
+                            </div>
+
+                        </li>
+                        <li>
+                            <div class="page03_text">
+                                <h1>타이틀제목</h1>
+                                <p>부가설명</p>
+                                <p>기타꼬리말</p>
+                                <a href="#"> Check-></a>
+
+
+                            </div>
+
+
+                        </li>
+              
+           
+
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </div>
+    
+</body>
+</html>
